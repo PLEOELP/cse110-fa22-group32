@@ -38,6 +38,7 @@ jobs:
       # Commit generated document into repository
       - name: Commit
         run: |
+          git config --local user.email "p2luo@ucsd.edu"
           git config --local user.name "jsdoc_workflow"
           git add ./source/assets/doc
           git commit -m "Updating the Documentation"
