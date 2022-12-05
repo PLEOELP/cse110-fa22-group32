@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: Day.js</title>
+    <title>JSDoc: Source: TodoBlock.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: Day.js</h1>
+    <h1 class="page-title">Source: TodoBlock.js</h1>
 
     
 
@@ -26,68 +26,114 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * Day.js
- * @author Steven Khaw
- * @summary File contains Day class and functions.
- *
- * Created at : 2022-11-16 2:30 PM
- * Last Modified : 2022-11-16 4:30 PM
- */
+            <pre class="prettyprint source linenums"><code>//create a todo block in side bar.
 
-/** Class Day */
-class Day {
-  /**
-   * @author Steven Khaw
-   * Constructs a day object from the class
-   * @constructor
-   *
-   * @param {number} currDayInt number of day (1-31)
-   * @param {string} currDayStr string representation of day ('Monday'...etc.)
-   * @param {Event[]} events events of day
-   * @param {Task[]} tasks tasks of day
-   */
-  constructor(currDayInt, currDayStr, events, tasks) {
-    this.currDayInt = currDayInt;
-    this.currDayStr = currDayStr;
-    this.events = events;
-    this.tasks = tasks;
+class TodoBlock extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+    const divBlock = document.createElement("div");
+    const style = document.createElement("style");
+
+    style.innerHTML = `
+      @font-face {
+        font-family: "Mochiy Pop One";
+        src: url("../fonts/MochiyPopOne-Regular.ttf");
+      }
+      div {
+        border-style: none;        
+        margin-top: 10px;
+        display: grid;
+        height: 40px;
+        grid-template-columns: repeat(20, auto);
+        background: #54CB9C;
+        border-radius: 62.5407px;
+        padding-left: 10px
+      }
+      #Id {
+        display: none;
+      }
+      #title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-width: 55px;
+        max-width: 120px;
+        font-size: 22px;
+        align-self: center;
+        grid-column-start: 2;
+        grid-column-end: 6;
+        margin: 0%;
+      }
+      h4 {
+        font-weight: normal;
+        font-size: 15px;
+        align-self: center;
+        margin: 0%;
+      }
+      #start {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-width: 55px;
+        min-width: 70px;
+        align-self: center;
+        grid-column-start: 8;
+        grid-column-end: 14;
+      }
+      #delete {
+        font-family: "Mochiy Pop One", sans-serif;
+        font-style: normal;
+        align-self: center;
+        border-radius: 50px;
+        width: 32px;
+        height: 32px;
+        background: #9c3030;
+        grid-column-start: 15;
+        grid-column-end: 17;
+      }
+      #edit {
+        font-family: "Mochiy Pop One", sans-serif;
+        font-style: normal;
+        align-self: center;
+        border-radius: 50px;
+        width: 32px;
+        height: 32px;
+        background: #F4F276;
+        grid-column-start: 18;
+        grid-column-end: 20;
+      }
+      #delete:hover, #edit:hover {
+        background-color: RoyalBlue;
+      }
+    `;
+
+    this.shadowRoot.append(style, divBlock);
   }
 
-  // Getters:
-
   /**
-   * @author Steven Khaw
-   * @return currDayInt
+   * @param {Object} data - The data to pass into the &lt;todo-block>, must be of the
+   * following format:
+   * {
+   *    "id": number,
+   *    "title" : "string",
+   *    "due" : "string"
+   * }
    */
-  get DayInt() {
-    return this.currDayInt;
-  }
-
-  /**
-   * @author Steven Khaw
-   * @return currDayStr
-   */
-  get DayStr() {
-    return this.currDayStr;
-  }
-
-  /**
-   * @author Steven Khaw
-   * @return events
-   */
-  get Events() {
-    return this.events;
-  }
-
-  /**
-   * @author Steven Khaw
-   * @return tasks
-   */
-  get Tasks() {
-    return this.tasks;
+  set todoData(data) {
+    const article = this.shadowRoot.querySelector("div");
+    article.innerHTML = `
+        &lt;input type="checkbox" id="check">
+        &lt;h3 id="Id">${data.id}&lt;/h3>
+        &lt;h3 id="title">${data.title}&lt;/h3>
+        &lt;h4 id="start">${data.due}&lt;/h4>
+        &lt;button id="delete">D&lt;/button>
+        &lt;button id="edit">E&lt;/button>
+        `;
   }
 }
+
+customElements.define("todo-block", TodoBlock);
 </code></pre>
         </article>
     </section>

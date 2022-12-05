@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: Day.js</title>
+    <title>JSDoc: Source: List.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: Day.js</h1>
+    <h1 class="page-title">Source: List.js</h1>
 
     
 
@@ -27,65 +27,100 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Day.js
- * @author Steven Khaw
- * @summary File contains Day class and functions.
+ * List.js
+ * @author Yuelin Dai
+ * @summary File contains List class and functions.
  *
- * Created at : 2022-11-16 2:30 PM
- * Last Modified : 2022-11-16 4:30 PM
+ * Created at : 2022-11-20 11:30 AM
+ * Last Modified : 2022-11-20 11:30 AM
  */
 
-/** Class Day */
-class Day {
+/** Class List */
+class List {
   /**
-   * @author Steven Khaw
-   * Constructs a day object from the class
+   * @author Yuelin Dai
+   * Constructs a list object from the class
    * @constructor
    *
-   * @param {number} currDayInt number of day (1-31)
-   * @param {string} currDayStr string representation of day ('Monday'...etc.)
-   * @param {Event[]} events events of day
-   * @param {Task[]} tasks tasks of day
+   * @param {string} title title of list
+   * @param {string} lastUpdated last updated date; format: "MM-DD-YY"
+   * @param {string} bindedCalendarID ID of the binded calendar
+   * @param {{number: Task}} tasks tasks in list, key is task's unique ID
    */
-  constructor(currDayInt, currDayStr, events, tasks) {
-    this.currDayInt = currDayInt;
-    this.currDayStr = currDayStr;
-    this.events = events;
+  constructor(title, lastUpdated, bindedCalendarID, tasks) {
+    this.title = title;
+    this.lastUpdated = lastUpdated;
+    this.bindedCalendarID = bindedCalendarID;
     this.tasks = tasks;
   }
 
   // Getters:
 
   /**
-   * @author Steven Khaw
-   * @return currDayInt
+   * @author Yuelin Dai
+   * @return lastUpdated
    */
-  get DayInt() {
-    return this.currDayInt;
+  get LastUpdated() {
+    return this.lastUpdated;
   }
 
   /**
-   * @author Steven Khaw
-   * @return currDayStr
+   * @author Yuelin Dai
+   * @return title
    */
-  get DayStr() {
-    return this.currDayStr;
+  get Title() {
+    return this.title;
   }
 
   /**
-   * @author Steven Khaw
-   * @return events
+   * @author Yuelin Dai
+   * @return bindedCalendarID
    */
-  get Events() {
-    return this.events;
+  get BindedCalendarID() {
+    return this.bindedCalendarID;
   }
 
   /**
-   * @author Steven Khaw
+   * @author Yuelin Dai
    * @return tasks
    */
   get Tasks() {
     return this.tasks;
+  }
+
+  /**
+   * @author Yuelin Dai
+   * @return array of tasks sorted by due dates
+   */
+  get SortedTasks() {
+    let tasksAr = Object.values(this.tasks);
+
+    // sort by due dates
+    tasksAr.sort((task1, task2) => {
+      // comparator
+      let date1 = new Date(task1.DueDate);
+      let date2 = new Date(task2.DueDate);
+
+      if (date1 &lt; date2) {
+        return -1;
+      }
+      if (date1 > date2) {
+        return 1;
+      }
+      return 0;
+    });
+
+    return tasksAr;
+  }
+
+  /**
+   * @param: task
+   * @param {Task} task - task that will be added
+   *
+   * @author Yuelin Dai
+   */
+  AddTask(task) {
+    this.tasks[task.TaskID] = task;
   }
 }
 </code></pre>

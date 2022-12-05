@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: Task</title>
+    <title>JSDoc: Class: List</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: Task</h1>
+    <h1 class="page-title">Class: List</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>Task<span class="signature">(taskName, tags, dueDate, description, complete)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>List<span class="signature">(title, lastUpdated, bindedCalendarID, tasks)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class Task TODO ADD MORE DESCRIPTION</div>
+            <div class="class-description">Class List</div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="Task"><span class="type-signature"></span>new Task<span class="signature">(taskName, tags, dueDate, description, complete)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="List"><span class="type-signature"></span>new List<span class="signature">(title, lastUpdated, bindedCalendarID, tasks)</span><span class="type-signature"></span></h4>
     
 
     
@@ -85,7 +85,7 @@
 
         <tr>
             
-                <td class="name"><code>taskName</code></td>
+                <td class="name"><code>title</code></td>
             
 
             <td class="type">
@@ -101,37 +101,14 @@
 
             
 
-            <td class="description last">name of task</td>
+            <td class="description last">title of list</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>tags</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;string></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">tags that task belongs to</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>dueDate</code></td>
+                <td class="name"><code>lastUpdated</code></td>
             
 
             <td class="type">
@@ -147,14 +124,14 @@
 
             
 
-            <td class="description last">due date of task; format: 'MM/DD/YY HH:MM'</td>
+            <td class="description last">last updated date; format: "MM-DD-YY"</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>description</code></td>
+                <td class="name"><code>bindedCalendarID</code></td>
             
 
             <td class="type">
@@ -170,20 +147,20 @@
 
             
 
-            <td class="description last">description of task</td>
+            <td class="description last">ID of the binded calendar</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>complete</code></td>
+                <td class="name"><code>tasks</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">boolean</span>
+<span class="param-type">Object</span>
 
 
             
@@ -193,7 +170,7 @@
 
             
 
-            <td class="description last">boolean of task completion</td>
+            <td class="description last">tasks in list, key is task's unique ID</td>
         </tr>
 
     
@@ -227,8 +204,8 @@
     <dt class="tag-author">Author:</dt>
     <dd class="tag-author">
         <ul>
-            <li>Guan Li
-Constructs a task object from the class</li>
+            <li>Yuelin Dai
+Constructs a list object from the class</li>
         </ul>
     </dd>
     
@@ -242,7 +219,7 @@ Constructs a task object from the class</li>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Task.js.html">Task.js</a>, <a href="Task.js.html#line11">line 11</a>
+        <a href="List.js.html">List.js</a>, <a href="List.js.html#line11">line 11</a>
     </li></ul></dd>
     
 
@@ -292,7 +269,7 @@ Constructs a task object from the class</li>
 
         
             
-<h4 class="name" id="Complete"><span class="type-signature"></span>Complete<span class="type-signature"></span></h4>
+<h4 class="name" id="BindedCalendarID"><span class="type-signature"></span>BindedCalendarID<span class="type-signature"></span></h4>
 
 
 
@@ -325,7 +302,7 @@ Constructs a task object from the class</li>
     <dt class="tag-author">Author:</dt>
     <dd class="tag-author">
         <ul>
-            <li>Steven Khaw</li>
+            <li>Yuelin Dai</li>
         </ul>
     </dd>
     
@@ -339,7 +316,7 @@ Constructs a task object from the class</li>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Task.js.html">Task.js</a>, <a href="Task.js.html#line83">line 83</a>
+        <a href="List.js.html">List.js</a>, <a href="List.js.html#line51">line 51</a>
     </li></ul></dd>
     
 
@@ -357,75 +334,7 @@ Constructs a task object from the class</li>
 
         
             
-<h4 class="name" id="counter"><span class="type-signature"></span>counter<span class="type-signature"> :number</span></h4>
-
-
-
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Task.js.html">Task.js</a>, <a href="Task.js.html#line13">line 13</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="Description"><span class="type-signature"></span>Description<span class="type-signature"></span></h4>
+<h4 class="name" id="LastUpdated"><span class="type-signature"></span>LastUpdated<span class="type-signature"></span></h4>
 
 
 
@@ -458,7 +367,7 @@ Constructs a task object from the class</li>
     <dt class="tag-author">Author:</dt>
     <dd class="tag-author">
         <ul>
-            <li>Guan Li</li>
+            <li>Yuelin Dai</li>
         </ul>
     </dd>
     
@@ -472,7 +381,7 @@ Constructs a task object from the class</li>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Task.js.html">Task.js</a>, <a href="Task.js.html#line75">line 75</a>
+        <a href="List.js.html">List.js</a>, <a href="List.js.html#line35">line 35</a>
     </li></ul></dd>
     
 
@@ -490,7 +399,7 @@ Constructs a task object from the class</li>
 
         
             
-<h4 class="name" id="DueDate"><span class="type-signature"></span>DueDate<span class="type-signature"></span></h4>
+<h4 class="name" id="SortedTasks"><span class="type-signature"></span>SortedTasks<span class="type-signature"></span></h4>
 
 
 
@@ -523,7 +432,7 @@ Constructs a task object from the class</li>
     <dt class="tag-author">Author:</dt>
     <dd class="tag-author">
         <ul>
-            <li>Guan Li</li>
+            <li>Yuelin Dai</li>
         </ul>
     </dd>
     
@@ -537,7 +446,7 @@ Constructs a task object from the class</li>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Task.js.html">Task.js</a>, <a href="Task.js.html#line67">line 67</a>
+        <a href="List.js.html">List.js</a>, <a href="List.js.html#line67">line 67</a>
     </li></ul></dd>
     
 
@@ -555,7 +464,7 @@ Constructs a task object from the class</li>
 
         
             
-<h4 class="name" id="modifyDueDate"><span class="type-signature"></span>modifyDueDate<span class="type-signature"></span></h4>
+<h4 class="name" id="Tasks"><span class="type-signature"></span>Tasks<span class="type-signature"></span></h4>
 
 
 
@@ -588,7 +497,7 @@ Constructs a task object from the class</li>
     <dt class="tag-author">Author:</dt>
     <dd class="tag-author">
         <ul>
-            <li>Christopher Han</li>
+            <li>Yuelin Dai</li>
         </ul>
     </dd>
     
@@ -602,7 +511,7 @@ Constructs a task object from the class</li>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Task.js.html">Task.js</a>, <a href="Task.js.html#line109">line 109</a>
+        <a href="List.js.html">List.js</a>, <a href="List.js.html#line59">line 59</a>
     </li></ul></dd>
     
 
@@ -620,7 +529,7 @@ Constructs a task object from the class</li>
 
         
             
-<h4 class="name" id="modifyTaskDescription"><span class="type-signature"></span>modifyTaskDescription<span class="type-signature"></span></h4>
+<h4 class="name" id="Title"><span class="type-signature"></span>Title<span class="type-signature"></span></h4>
 
 
 
@@ -653,7 +562,7 @@ Constructs a task object from the class</li>
     <dt class="tag-author">Author:</dt>
     <dd class="tag-author">
         <ul>
-            <li>Christopher Han</li>
+            <li>Yuelin Dai</li>
         </ul>
     </dd>
     
@@ -667,7 +576,7 @@ Constructs a task object from the class</li>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Task.js.html">Task.js</a>, <a href="Task.js.html#line117">line 117</a>
+        <a href="List.js.html">List.js</a>, <a href="List.js.html#line43">line 43</a>
     </li></ul></dd>
     
 
@@ -684,12 +593,79 @@ Constructs a task object from the class</li>
 
 
         
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
             
-<h4 class="name" id="modifyTaskName"><span class="type-signature"></span>modifyTaskName<span class="type-signature"></span></h4>
+
+    
+
+    
+    <h4 class="name" id="AddTask"><span class="type-signature"></span>AddTask<span class="signature">(task)</span><span class="type-signature"></span></h4>
+    
+
+    
 
 
 
 
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>task</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Task.html">Task</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">task that will be added</td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -718,7 +694,7 @@ Constructs a task object from the class</li>
     <dt class="tag-author">Author:</dt>
     <dd class="tag-author">
         <ul>
-            <li>Christopher Han</li>
+            <li>Yuelin Dai</li>
         </ul>
     </dd>
     
@@ -732,7 +708,7 @@ Constructs a task object from the class</li>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Task.js.html">Task.js</a>, <a href="Task.js.html#line93">line 93</a>
+        <a href="List.js.html">List.js</a>, <a href="List.js.html#line94">line 94</a>
     </li></ul></dd>
     
 
@@ -748,9 +724,6 @@ Constructs a task object from the class</li>
 
 
 
-        
-            
-<h4 class="name" id="modifyTaskTags"><span class="type-signature"></span>modifyTaskTags<span class="type-signature"></span></h4>
 
 
 
@@ -759,119 +732,6 @@ Constructs a task object from the class</li>
 
 
 
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Christopher Han</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Task.js.html">Task.js</a>, <a href="Task.js.html#line101">line 101</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="Tags"><span class="type-signature"></span>Tags<span class="type-signature"></span></h4>
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Guan Li</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Task.js.html">Task.js</a>, <a href="Task.js.html#line59">line 59</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
 
 
 
@@ -879,206 +739,6 @@ Constructs a task object from the class</li>
 
 
         
-            
-<h4 class="name" id="taskID"><span class="type-signature"></span>taskID<span class="type-signature"> :number</span></h4>
-
-
-
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Task.js.html">Task.js</a>, <a href="Task.js.html#line30">line 30</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="TaskID"><span class="type-signature"></span>TaskID<span class="type-signature"></span></h4>
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Guan Li</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Task.js.html">Task.js</a>, <a href="Task.js.html#line51">line 51</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="TaskName"><span class="type-signature"></span>TaskName<span class="type-signature"></span></h4>
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Guan Li</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Task.js.html">Task.js</a>, <a href="Task.js.html#line43">line 43</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-    
-
     
 
     
